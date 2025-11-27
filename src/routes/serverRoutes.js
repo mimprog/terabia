@@ -3,7 +3,7 @@
 
 //const BASE_URL = "https://terabia-api.onrender.com";
 //const SU = "https://terabia-api.onrender.com/api/v1";
-const BASE_URL = "https://terrabia-api-zeyz.onrender.com/"
+const BASE_URL = "https://terrabia-api-zeyz.onrender.com"
 const SU = "https://terrabia-api-zeyz.onrender.com/api/v1"
 //const BASE_URL = "http://localhost:5000";
 //const SU = "http://localhost:5000/api/v1";
