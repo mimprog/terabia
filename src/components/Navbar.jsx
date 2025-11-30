@@ -7,7 +7,7 @@ import { Cart, Chat, Map, Notification, Settings, UserProfile } from './';
 import { selectCurrentUser } from '../slices/auth/authSlice.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../slices/auth/authSlice.js';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ViewCart from './ViewCart.jsx';
 import { clearLocation, selectCurrentLocation } from '../slices/location/locationSlice.js';
@@ -50,6 +50,8 @@ const Navbar = () => {
   const handleToggleModal = (modal) => {
     handleClick(modal);
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -96,6 +98,15 @@ const Navbar = () => {
               icon={<MdSettingsApplications />}
               customFunc={() => handleToggleModal('settings')}
             />
+            
+              <NavButton
+    dotColor="red"
+    title="Chat"
+    color="white"
+    value={0}
+    icon={<MdChat />}
+    customFunc={() => navigate("/chat")}
+  />
           </div>
 
           {/* User Profile Section */}

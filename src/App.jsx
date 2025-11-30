@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import { Navbar, Footer, Sidebar, ThemeSettings, Profile, Cart, Map, Settings, Notification } from './components';
+import { Navbar, Footer, Sidebar, ThemeSettings, Profile, Cart, Chat, Map, Settings, Notification } from './components';
 import { useStateContext } from './contexts/ContextProvider';
 import RequireAuth from './pages/authMiddleware/RequireAuth';
 import RequireManager from './pages/authMiddleware/RequireManager';
@@ -84,11 +84,13 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/subcategories" element={<SubCategories />} />
+            <Route path="/chat" element={<Chat />} />
           </Routes>
 
           <Routes>
             <Route element={<RequireAuth />}>
               <Route path="/orders" element={<Orders />} />
+              
             </Route>
 
             <Route element={<RequireManager />}>

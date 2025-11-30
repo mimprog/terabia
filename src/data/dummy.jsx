@@ -1,6 +1,6 @@
 import { FaHouseUser, FaProductHunt } from "react-icons/fa6";
 import { FiShoppingBag, FiUsers } from "react-icons/fi";
-import { MdApps, MdCategory, MdContacts, MdHome, MdInsertEmoticon, MdOutlineCategory, MdOutlineShoppingCart, MdStore } from "react-icons/md";
+import { MdApps, MdCategory, MdChat, MdContacts, MdHome, MdInsertEmoticon, MdOutlineCategory, MdOutlineShoppingCart, MdStore } from "react-icons/md";
 
 export const links = [
 
@@ -42,6 +42,11 @@ export const links = [
     {
         title: 'Products',
         links: [
+            {
+                name: 'chat',
+                baseUrl: '',
+                icon: <MdChat/>
+            },
             {
                 name: 'products',
                 baseUrl: '/manager',

@@ -3,6 +3,7 @@
 
 //const BASE_URL = "https://terabia-api.onrender.com";
 //const SU = "https://terabia-api.onrender.com/api/v1";
+ 
 const BASE_URL = "https://terrabia-api-zeyz.onrender.com"
 const SU = "https://terrabia-api-zeyz.onrender.com/api/v1"
 //const BASE_URL = "http://localhost:5000";
@@ -24,8 +25,16 @@ const SERVER_URL = {
     CUSTOMER_URL: `${SU}/customers`,
     MOVEMENT_TYPE_URL: `${SU}/movement-types`,
     SUBCATEGORY_URL: `${SU}/product_categories/subcategories`,
+    CONVERSATION_URL: `${SU}/chat/conversations`,
+    MESSAGE_URL: `${SU}/chat/message`,
+    MESSAGES_URL: `${SU}/chat/messages`,
+    USER_SEARCH_URL: `${SU}/users/search`,
+    CONVERSATION_START_URL: `${SU}/chat/conversation/start`,
 }
 
-export const  {REGISTER_URL, LOGIN_URL, SUBCATEGORY_URL, MOVEMENT_TYPE_URL, CUSTOMER_URL, CATEGORY_URL, STATUS_URL, USERS_URL, PRODUCT_CATEGORY_URL, PRODUCT_URL, STOCK_URL, ORDER_URL, ORDER_ITEM_URL, SUPPLIER_URL} = SERVER_URL;
+export const  {REGISTER_URL, LOGIN_URL, SUBCATEGORY_URL, MOVEMENT_TYPE_URL,
+     CUSTOMER_URL, CATEGORY_URL, STATUS_URL, USERS_URL, PRODUCT_CATEGORY_URL, PRODUCT_URL, 
+     STOCK_URL, ORDER_URL, ORDER_ITEM_URL, SUPPLIER_URL, CONVERSATION_URL, MESSAGES_URL, MESSAGE_URL
+    , USER_SEARCH_URL, CONVERSATION_START_URL} = SERVER_URL;
 //console.log(USERS_URL, BASE_URL);
 export default BASE_URL;
