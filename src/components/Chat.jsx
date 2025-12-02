@@ -29,7 +29,7 @@ const Conversation = () => {
   const [loadingMsgs, setLoadingMsgs] = useState(false);
 
   const messagesEndRef = useRef(null);
-  const headers = { Authorization: `Bearer ${token}` };
+  //const headers = { Authorization: `Bearer ${token}` };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +42,7 @@ const Conversation = () => {
     setLoadingConvs(true);
     try {
       // NOTE: this expects an idUser param (see controller). If you use auth, change accordingly.
-      const res = await axios.get(`${CONVERSATION_URL}?idUser=${loggedUserId}`, { headers });
+      const res = await axios.get(`${CONVERSATION_URL}?idUser=${loggedUserId}`, {headers: {"Content-Type": "application/json"}});
       console.log(res?.data);
       setConversations(res.data);
     } catch (err) {
@@ -60,7 +60,7 @@ const Conversation = () => {
   const fetchMessages = async (convId) => {
     setLoadingMsgs(true);
     try {
-      const res = await axios.get(`${MESSAGES_URL}/${convId}`, { headers });
+      const res = await axios.get(`${MESSAGES_URL}/${convId}`, {headers: {"Content-Type": "application/json"}});
       console.log(res?.data);
       setMessages(res.data);
     } catch (err) {
@@ -76,7 +76,7 @@ const Conversation = () => {
     try {
       const res = await axios.post(
         `${CONVERSATION_START_URL}?idExpediteur=${loggedUserId}&idDestinataire=${userId}`,
-        {},
+        {headers: {"Content-Type": "application/json"}},
       );
       console.log("Started conversation:", res.data);
       const msg = res.data;
@@ -98,7 +98,7 @@ const sendMessage = async () => {
   try {
     const res = await axios.post(
       `${MESSAGE_URL}?idExpediteur=${loggedUserId}&idConversation=${activeConv}`,
-      { contenu: newMessage }
+      { contenu: newMessage }, {headers: {"Content-Type": "application/json"}}
     );
 
     setMessages((prev) => [...prev, res.data]);
@@ -118,7 +118,7 @@ const sendMessage = async () => {
       return;
     }
     try {
-      const res = await axios.get(`${USER_SEARCH_URL}?q=${encodeURIComponent(query)}`, { headers });
+      const res = await axios.get(`${USER_SEARCH_URL}?q=${encodeURIComponent(query)}`, {headers: {"Content-Type": "application/json", "Authorization": `Bearer ${token}`}});
       setSearchResults(res.data);
     } catch (err) {
       console.error("Error searching users:", err);

@@ -1,5 +1,5 @@
-//const BASE_URL = "http://localhost:3000";
-const BASE_URL = "https://terabia.onrender.com";
+const BASE_URL = "http://localhost:3000";
+//const BASE_URL = "https://terabia.onrender.com";
 //const CLIENT_URL = "http://localhost:5000";
 const CLIENT_URL = {
     MANAGER_PRODUCTS_URL: `${BASE_URL}/manager/products`,
