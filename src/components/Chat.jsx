@@ -75,10 +75,8 @@ const Conversation = () => {
     console.log(loggedUserId, userId);
     try {
       const res = await axios.post(
-        `${CONVERSATION_START_URL}?idDestinataire=${userId}`,
-         
+        `${CONVERSATION_START_URL}?idExpediteur=${loggedUserId}&idDestinataire=${userId}`,
         {},
-        { headers }        
       );
       console.log("Started conversation:", res.data);
       const msg = res.data;
@@ -99,11 +97,8 @@ const sendMessage = async () => {
 
   try {
     const res = await axios.post(
-      `${MESSAGE_URL}?idConversation=${activeConv}`,
-      { contenu: newMessage },
-      {
-        headers: { Authorization: `Bearer ${token}` } // send token
-      }
+      `${MESSAGE_URL}?idExpediteur=${loggedUserId}&idConversation=${activeConv}`,
+      { contenu: newMessage }
     );
 
     setMessages((prev) => [...prev, res.data]);
